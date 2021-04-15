@@ -51,7 +51,7 @@
           <div class="flex content-center my-auto py-1 mt-1 rounded cursor-pointer hover:bg-hoverBlue">
             <div class="pl-1">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path opacity="0.9" fill-rule="evenodd" clip-rule="evenodd" d="M3 13H11V3H3V13ZM3 21H11V15H3V21ZM13 21H21V11H13V21ZM13 3V9H21V3H13Z" fill="white"/>
+              <path opacity="0.9" fill-rule="evenodd" clip-rule="evenodd" d="M18 7.00009L16.59 5.59009L10.25 11.9301L11.66 13.3401L18 7.00009ZM22.24 5.59009L11.66 16.1701L7.48003 12.0001L6.07003 13.4101L11.66 19.0001L23.66 7.00009L22.24 5.59009ZM0.410034 13.4101L6.00003 19.0001L7.41003 17.5901L1.83003 12.0001L0.410034 13.4101Z" fill="white"/>
               </svg>
             </div>
             <div class="flex-initial flex items-center pl-2">
@@ -210,17 +210,17 @@
                 <div v-if="chat.sender === 'Me'" class="mt-5">
                   <div class="flex items-center">
                     <img src="@/static/Profile6.png" class="w-6 float-left" alt="">
-                    <p class="font-sans pl-2 text-base font-bold">Felix Levan<span class="text-gray-400 pl-2 text-base ">{{ chat.time }}</span></p>
+                    <p class="font-sans pl-2 text-base font-bold">Felix Levan<span class="text-gray-400 pl-2 font-normal text-base ">{{ chat.time }}</span></p>
                   </div>
-                  <p class="font-sans pl-8 text-base">{{ chat.message }}</p>
+                  <p class="font-sans pl-8 font-normal text-base">{{ chat.message }}</p>
                   <img v-if="chat.img" class="rounded-md ml-8 w-1/5" :src="chat.img" alt="">
                 </div>
                 <div v-if="chat.sender === 'notMe'" class="mt-5">
                   <div class="flex items-center">
                     <img :src="previewChat.profilePic" class="w-6 float-left" alt="">
-                    <p class=" font-sans pl-2 text-base font-bold">{{ previewChat.userName }}<span class="text-gray-400 pl-2 text-base ">{{ chat.time }}</span></p>
+                    <p class=" font-sans pl-2 text-base font-bold">{{ previewChat.userName }}<span class="text-gray-400 pl-2 font-normal text-base ">{{ chat.time }}</span></p>
                   </div>
-                  <p class="font-sans pl-8 text-base">{{ chat.message }}</p>
+                  <p class="font-sans pl-8 font-normal text-base">{{ chat.message }}</p>
                   <img v-if="chat.img" class="rounded-md ml-8 w-1/5" :src="chat.img" alt="">
                 </div>
               </div>
@@ -238,12 +238,12 @@
               <div class="bg-gray-200 py-2 px-2 flex-grow text-xs h-8">
                 <input class="bg-gray-200 w-11/12 focus:outline-none" v-model="writtenMessage" @keydown="sendMessage($event)" placeholder="Message..." type="text">
               </div>
-              <div class="pr-3 h-8 flex items-center">
+              <div class="pr-3 h-8 pl-2 flex items-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M12 5C11.4477 5 11 5.44772 11 6V11H6C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13H11V18C11 18.5523 11.4477 19 12 19C12.5523 19 13 18.5523 13 18V13H18C18.5523 13 19 12.5523 19 12C19 11.4477 18.5523 11 18 11H13V6C13 5.44772 12.5523 5 12 5Z" fill="#110F24" fill-opacity="0.4"/>
                 </svg>
               </div>
-              <div class="pr-3 h-8 flex items-center w-1/12">
+              <div class="pr-3 h-8 flex items-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM15.5 11C16.33 11 17 10.33 17 9.5C17 8.67 16.33 8 15.5 8C14.67 8 14 8.67 14 9.5C14 10.33 14.67 11 15.5 11ZM8.5 11C9.33 11 10 10.33 10 9.5C10 8.67 9.33 8 8.5 8C7.67 8 7 8.67 7 9.5C7 10.33 7.67 11 8.5 11ZM12 17.5C14.33 17.5 16.31 16.04 17.11 14H6.89C7.69 16.04 9.67 17.5 12 17.5Z" fill="#110F24" fill-opacity="0.4"/>
                 </svg>
@@ -447,9 +447,6 @@ export default {
 <style>
 .chatBoxHeight {
   min-height: 98vh;
-}
-.messageBox {
-  top: 100vh;
 }
 .line-center{
     margin:0;padding:0 10px;

@@ -21,13 +21,13 @@
   </div>
   <div class="w-auto pt-3 px-2 flex items-center justify-between h-14">
     <div class="flex h-8 rounded justify-start bg-white items-center">
-      <div>
+      <div class="pl-2">
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M11.625 10.5H11.0325L10.8225 10.2975C11.5575 9.4425 12 8.3325 12 7.125C12 4.4325 9.8175 2.25 7.125 2.25C4.4325 2.25 2.25 4.4325 2.25 7.125C2.25 9.8175 4.4325 12 7.125 12C8.3325 12 9.4425 11.5575 10.2975 10.8225L10.5 11.0325V11.625L14.25 15.3675L15.3675 14.25L11.625 10.5ZM7.125 10.5C5.2575 10.5 3.75 8.9925 3.75 7.125C3.75 5.2575 5.2575 3.75 7.125 3.75C8.9925 3.75 10.5 5.2575 10.5 7.125C10.5 8.9925 8.9925 10.5 7.125 10.5Z" fill="#110F24" fill-opacity="0.4"/>
         </svg>
       </div>
       <div>
-        <input type="text" class="focus:outline-none" placeholder="Search...">
+        <input type="text" class="focus:outline-none pl-2" placeholder="Search...">
       </div>
     </div>
     <div class="flex flex-row">
@@ -51,17 +51,18 @@
         <option value="volvo">Stock</option>
       </select>
     </div>
-    <div class="pt-14 overflow-x-hidden relative flex flex-row items-end">
+    <div class="pt-8 overflow-x-hidden relative flex flex-row items-end">
       <div class="w-full mb-6 absolute flex flex-col">
         <div class="h-1 border border-t-0 border-l-0 border-r-0 border-gray-200 mt-9"></div>
         <div class="h-1 border border-t-0 border-l-0 border-r-0 border-gray-200 mt-9"></div>
         <div class="h-1 border border-t-0 border-l-0 border-r-0 border-gray-200 mt-9"></div>
         <div class="h-1 border border-t-0 border-l-0 border-r-0 border-gray-200 mt-9"></div>
       </div>
-        <div v-for="(graph, i) in graphs" :key="i" class="flex w-14 smlaptop:w-1/12 flex-col pl-2 z-0">
-          <div :class="graphHeight(i)" class="bg-blueish rounded h-10 cursor-pointer" />
-          <p class="text-center font-sans">{{ graph.month }}</p>
-        </div>
+      <div v-for="(graph, i) in graphs" :key="i" class="flex has-tooltip w-14 smlaptop:w-1/12 flex-col pl-2 z-0">
+        <div class='tooltip text-center rounded mb-2 text-white bg-hoverBlue'>{{ graph.status }}</div>
+        <div :class="graphHeight(i)" class="bg-blueish rounded h-10 cursor-pointer" />
+        <p class="text-center font-sans text-gray-400">{{ graph.month }}</p>
+      </div>
     </div>
   </div>
   <div class="flex smlaptop:justify-between flex-wrap smlaptop:flex-nowrap">
@@ -285,4 +286,11 @@ export default {
 }
 </script>
 <style>
+.tooltip{
+  visibility: hidden;
+}
+.has-tooltip:hover .tooltip {
+  visibility: visible;
+  z-index: 100;
+}
 </style>
