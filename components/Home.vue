@@ -26,8 +26,8 @@
   </div>
   <div class="rounded-xl m-2 mt-8 smlaptop:mt-1 h-64 bg-white">
     <div class="w-full rounded-t-xl h-14 flex justify-between items-center my-2 bg-gray-300">
-      <p class="pl-3 font-sans text-base font-bold">This Month</p>
-      <select @click="randomizeTheGraph()" name="cars" class="mr-3 focus:outline-none cursor-pointer bg-white w-28 border border-gray-200" id="cars">
+      <p class="pl-3 font-sans text-base font-bold text-hardBlue">This Month</p>
+      <select @click="randomizeTheGraph()" name="cars" class="mr-3 text-hardBlue focus:outline-none cursor-pointer bg-white w-28 border border-gray-200" id="cars">
         <option value="volvo">Sales</option>
         <option value="volvo">Stock</option>
       </select>
@@ -49,7 +49,7 @@
   <div class="flex smlaptop:justify-between flex-wrap smlaptop:flex-nowrap">
     <div class="rounded-xl m-2 w-full smlaptop:w-3/5 bg-white">
       <div class="w-full rounded-t-xl h-14 flex justify-between items-center bg-gray-300">
-        <p class="pl-3 text-base font-bold font-sans">Tasks</p>
+        <p class="pl-3 text-base font-bold font-sans text-hardBlue">Tasks</p>
         <div class="w-3/5 tablet:w-1/5 flex flex-row justify-end">
           <select name="cars" class="mr-3 text-base focus:outline-none bg-white w-28 border border-gray-200" id="cars">
             <option value="volvo">Sort By</option>
@@ -66,7 +66,7 @@
           <input type="checkbox" v-model="task.checked" class="checked:bg-gray-200 checked:border-red">
         </div>
         <div @click="toDoList[i].checked = !toDoList[i].checked" class="w-7/12 flex justify-start cursor-pointer">
-          <strike class="font-sans text-gray-400 text-base" v-if="task.checked">{{ task.taskName }}</strike>
+          <strike class="font-sans text-gray-400 text-base text-hardBlue" v-if="task.checked">{{ task.taskName }}</strike>
           <p class="font-sans text-base" v-else>{{ task.taskName }}</p>
         </div>
         <div class="w-2/12 text-sm text-gray-400">{{ task.due }}</div>
@@ -89,7 +89,7 @@
     </div>
     <div class="rounded-xl m-2 w-full smlaptop:w-2/5 bg-white">
       <div class="w-full rounded-t-xl h-14 flex justify-between items-center bg-gray-300">
-        <p class="pl-3 font-sans text-base font-bold">Projects</p>
+        <p class="pl-3 font-sans text-base font-bold text-hardBlue">Projects</p>
         <div class="mr-4 bg-gray-200 p-2">
           <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M5.00004 0.333344C4.63185 0.333344 4.33337 0.63182 4.33337 1.00001V4.33334H1.00004C0.631851 4.33334 0.333374 4.63182 0.333374 5.00001C0.333374 5.3682 0.631851 5.66668 1.00004 5.66668H4.33337V9.00001C4.33337 9.3682 4.63185 9.66668 5.00004 9.66668C5.36823 9.66668 5.66671 9.3682 5.66671 9.00001V5.66668H9.00004C9.36823 5.66668 9.66671 5.3682 9.66671 5.00001C9.66671 4.63182 9.36823 4.33334 9.00004 4.33334H5.66671V1.00001C5.66671 0.63182 5.36823 0.333344 5.00004 0.333344Z" fill="#110F24"/>
@@ -98,7 +98,7 @@
       </div>
       <div v-for="(project, i) in projects" :key="i" class="flex flex-row h-14 items-center px-3 border-gray-200 border border-t-0 border-l-0 border-r-0">
         <div class="w-6/12 flex flex-col">
-          <div class="font-sans text-base">{{ project.name }}</div>
+          <div class="font-sans text-base text-hardBlue">{{ project.name }}</div>
           <div class="font-sans text-xs text-gray-400">{{ project.sub }}</div>
         </div>
         <div class="w-6/12 h-1 bg-gray-300">
