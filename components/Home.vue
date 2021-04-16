@@ -62,12 +62,10 @@
         </div>
       </div>
       <div v-for="(task, i) in toDoList" :key="i" class="flex flex-row h-14 items-center px-3 border-gray-200 border border-t-0 border-l-0 border-r-0">
-        <div class="flex justify-start w-1/12">
+        <div @click="toDoList[i].checked = !toDoList[i].checked" class="w-8/12 flex justify-start items-center cursor-pointer">
           <input type="checkbox" v-model="task.checked" class="checked:bg-gray-200 cursor-pointer checked:border-red">
-        </div>
-        <div @click="toDoList[i].checked = !toDoList[i].checked" class="w-7/12 flex justify-start cursor-pointer">
-          <strike class="font-sans text-gray-400 text-base text-hardBlue" v-if="task.checked">{{ task.taskName }}</strike>
-          <p class="font-sans text-base" v-else>{{ task.taskName }}</p>
+          <strike class="font-sans pl-4 text-gray-400 text-base text-hardBlue" v-if="task.checked">{{ task.taskName }}</strike>
+          <p class="font-sans pl-4 text-base" v-else>{{ task.taskName }}</p>
         </div>
         <div class="w-2/12 text-sm text-gray-400">{{ task.due }}</div>
         <div class="w-1/12 flex justify-end">
