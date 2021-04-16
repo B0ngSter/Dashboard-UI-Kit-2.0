@@ -156,7 +156,7 @@
       <div v-if="activeTab === 'Convo' && !NavBarOpener" class="w-0 smlaptop:w-72 bg-white h-screen flex flex-col">
         <div v-for="(user, idy) in ChatJson" :key="idy" :class="{'bg-gray-200': previewChat.userName === user.userName}" class="ml-2 h-9 mr-2 mt-2 cursor-pointer flex flex-row items-center p-1 w-52 hover:bg-gray-200" @click="OpenChat(idy)">
           <img :src="user.profilePic" class="w-6" alt="">
-          <p class="font-sans text-sm pl-1" :class="{'font-bold': user.newMessages}">{{ user.userName }}</p>
+          <p class="font-sans text-sm pl-1 text-hardBlue" :class="{'font-bold': user.newMessages}">{{ user.userName }}</p>
         </div>
         <div class="w-60 fixed bottom-1.5 flex justify-between px-3">
           <div class="font-sans bg-gray-200 py-2 px-2 w-32 text-xs h-8">
@@ -198,7 +198,7 @@
           <div v-if="activeTab === 'Convo'" class="w-auto rounded-sm bg-white m-2 flex items-center justify-between smlaptop:hidden h-14">
             <div class="w-4/5">
               <img :src="previewChat.profilePic" class="w-6 pl-2 float-left mr-2" alt="">
-              <p class="font-sans text-base font-bold">{{ previewChat.userName }}</p>
+              <p class="font-sans text-base font-bold text-hardBlue">{{ previewChat.userName }}</p>
             </div>
             <div class="w-1/5">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -208,16 +208,16 @@
           </div>
           <div class="rounded-xl CustomMinimumH mt-6 smlaptop:mt-2 block relative m-2 chatBoxHeight bg-white">
             <div class="w-full rounded-t-xl h-14 flex justify-start items-center my-2 bg-gray-300">
-              <p class="font-sans text-base font-bold pl-3">{{ previewChat.userName }}</p>
+              <p class="font-sans text-base font-bold pl-3 text-hardBlue">{{ previewChat.userName }}</p>
             </div>
             <div class="w-full px-3 py-5 overflow-x-hidden flex flex-col">
               <div v-for="(chat, idx) in previewChat.chatHistory" :key="idx" class="flex flex-col w-full">
                 <div v-if="chat.sender === 'Me'" class="mt-5">
                   <div class="flex items-center">
                     <img src="@/static/Profile6.png" class="w-6 float-left" alt="">
-                    <p class="font-sans pl-2 text-base font-bold">Felix Levan<span class="text-gray-400 pl-2 font-normal text-base ">{{ chat.time }}</span></p>
+                    <p class="font-sans pl-2 text-base font-bold text-hardBlue">Felix Levan<span class="text-gray-400 pl-2 font-normal text-base ">{{ chat.time }}</span></p>
                   </div>
-                  <p class="font-sans pl-8 font-normal text-base">{{ chat.message }}</p>
+                  <p class="font-sans pl-8 font-normal text-hardBlue text-base">{{ chat.message }}</p>
                   <img v-if="chat.img" class="rounded-md ml-8 w-1/5" :src="chat.img" alt="">
                 </div>
                 <div v-if="chat.sender === 'notMe'" class="mt-5">
@@ -225,7 +225,7 @@
                     <img :src="previewChat.profilePic" class="w-6 float-left" alt="">
                     <p class=" font-sans pl-2 text-base font-bold">{{ previewChat.userName }}<span class="text-gray-400 pl-2 font-normal text-base ">{{ chat.time }}</span></p>
                   </div>
-                  <p class="font-sans pl-8 font-normal text-base">{{ chat.message }}</p>
+                  <p class="font-sans pl-8 font-normal text-hardBlue text-base">{{ chat.message }}</p>
                   <img v-if="chat.img" class="rounded-md ml-8 w-1/5" :src="chat.img" alt="">
                 </div>
               </div>
@@ -235,7 +235,7 @@
                   <img :src="previewChat.profilePic" class="w-6 float-left" alt="">
                   <p class=" font-sans pl-2 text-base font-bold">{{ previewChat.userName }}<span class="text-gray-400 pl-2 text-base ">{{ previewChat.newMessages.time }}</span></p>
                 </div>
-                <p class="font-sans pl-8 text-base">{{ previewChat.newMessages.message }}</p>
+                <p class="font-sans pl-8 text-hardBlue text-base">{{ previewChat.newMessages.message }}</p>
                 <img v-if="previewChat.newMessages.img" class="rounded-md ml-8 w-1/5" :src="chat.img" alt="">
               </div>
             </div>
