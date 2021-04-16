@@ -19,7 +19,7 @@
       </svg>
     </div>
   </div>
-  <div class="w-auto pt-3 px-2 flex items-center justify-between h-14">
+  <div class="w-auto pt-101 smlaptop:pt-3  px-2 flex items-center justify-between h-14">
     <div class="flex h-8 rounded justify-start bg-white items-center">
       <div class="pl-2">
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,7 +43,7 @@
       </div>
     </div>
   </div>
-  <div class="rounded-xl m-2 h-64 bg-white">
+  <div class="rounded-xl m-2 mt-8 smlaptop:mt-1 h-64 bg-white">
     <div class="w-full rounded-t-xl h-14 flex justify-between items-center my-2 bg-gray-300">
       <p class="pl-3 font-sans text-base font-bold">This Month</p>
       <select @click="randomizeTheGraph()" name="cars" class="mr-3 focus:outline-none cursor-pointer bg-white w-28 border border-gray-200" id="cars">
@@ -244,8 +244,7 @@ export default {
     const device = navigator.userAgent.toLowerCase()
     const isAndroid = device.includes('android')
     if (isAndroid || !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)) {
-      this.graphs = this.graphs.slice(5, 12)
-      this.isMobileDevice = true
+      this.graphs = this.graphs.slice(5, 12) // to show only last 7 month graph on small devices
     } else {
       console.log('big screen device')
     }

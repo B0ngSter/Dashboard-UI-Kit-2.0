@@ -130,7 +130,7 @@
         </div>
       </div>
       <div v-if="activeTab === 'Convo'" class="w-0 smlaptop:w-72 bg-white h-screen flex flex-col">
-        <div v-for="(user, idy) in ChatJson" :key="idy" class="ml-2 mr-2 mt-2 cursor-pointer flex flex-row items-center p-1 w-52 hover:bg-gray-200" @click="OpenChat(idy)">
+        <div v-for="(user, idy) in ChatJson" :key="idy" :class="{'bg-gray-200': previewChat.userName === user.userName}" class="ml-2 h-9 mr-2 mt-2 cursor-pointer flex flex-row items-center p-1 w-52 hover:bg-gray-200" @click="OpenChat(idy)">
           <img :src="user.profilePic" class="w-6" alt="">
           <p class="font-sans text-sm pl-1" :class="{'font-bold': user.newMessages}">{{ user.userName }}</p>
         </div>
@@ -166,7 +166,7 @@
           </div>
         </div>
         <div class="">
-          <div class="w-auto mt-2 px-2 flex items-center justify-between h-14">
+          <div class="w-auto mt-16 smlaptop:mt-2 px-2 flex items-center justify-between h-14">
             <div class="flex h-8 rounded justify-start bg-white items-center">
               <div class="pl-2">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -190,7 +190,7 @@
               </div>
             </div>
           </div>
-          <div v-if="activeTab === 'Convo' && !isMobileDevice" class="w-auto bg-white mt-4 m-2 flex items-center justify-between smlaptop:hidden h-14">
+          <div v-if="activeTab === 'Convo'" class="w-auto rounded-sm bg-white m-2 flex items-center justify-between smlaptop:hidden h-14">
             <div class="w-4/5">
               <img :src="previewChat.profilePic" class="w-6 pl-2 float-left mr-2" alt="">
               <p class="font-sans text-base font-bold">{{ previewChat.userName }}</p>
@@ -201,8 +201,8 @@
               </svg>
             </div>
           </div>
-          <div class="rounded-xl CustomMinimumH block relative m-2 chatBoxHeight bg-white">
-            <div class="w-full rounded-t-xl h-10 flex justify-start items-center my-2 bg-gray-300">
+          <div class="rounded-xl CustomMinimumH mt-6 block relative m-2 chatBoxHeight bg-white">
+            <div class="w-full rounded-t-xl h-14 flex justify-start items-center my-2 bg-gray-300">
               <p class="font-sans text-base font-bold pl-3">{{ previewChat.userName }}</p>
             </div>
             <div class="w-full px-3 py-5 overflow-x-hidden flex flex-col">
@@ -401,21 +401,10 @@ export default {
           ]
         }
       ],
-      isMobileDevice: false,
       activeTab: 'Home'
     }
   },
   mounted () {
-    const device = navigator.userAgent.toLowerCase()
-    const isAndroid = device.includes('android')
-    if (isAndroid || !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)) {
-      // if user have mobile device (android/ios) then user will only be able to see 7 month graph instead of 12, this could have done with responsive classes also but I was iterating the graph bars with for loop
-      // so it was quite tricky to apply responsive sudo classes so I had to figure out a diff method 
-      this.graphs = this.graphs.slice(5, 12)
-      this.isMobileDevice = true
-    } else {
-      console.log('big screen device')
-    }
     this.previewChat = {...this.ChatJson[0]} // first chat opens up on its own
   },
   methods: {
