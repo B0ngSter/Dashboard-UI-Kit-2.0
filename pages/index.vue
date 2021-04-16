@@ -1,7 +1,26 @@
 <template>
   <div class="container">
     <div class="flex w-screen">
-      <div class="w-0 smlaptop:w-72 bg-DarkBlue h-screen flex-none">
+      <div class="w-full fixed smlaptop:hidden  z-10 bg-DarkBlue p-4 flex justify-between items-center">
+        <div class="flex content-center items-center">
+          <div class="flex-initial">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="Icon">
+              <path id="Icon_2" fill-rule="evenodd" clip-rule="evenodd" d="M24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12ZM10.6078 5.31363L9.05221 5.03418H9.05158C8.47404 4.9305 7.87974 5.06484 7.39938 5.40765C6.91902 5.75046 6.59195 6.27366 6.49009 6.8622L5.00968 15.4228C4.98047 15.5909 5.01797 15.7639 5.11395 15.9039C5.20992 16.0438 5.35651 16.1392 5.52148 16.169L8.01094 16.6159C8.34097 16.6752 8.68062 16.5985 8.95517 16.4027C9.22971 16.2068 9.41667 15.9078 9.47491 15.5715L11.1202 6.0599C11.1347 5.97661 11.1329 5.89124 11.115 5.80865C11.097 5.72606 11.0633 5.64788 11.0157 5.57858C10.9682 5.50928 10.9076 5.45021 10.8376 5.40475C10.7676 5.35929 10.6895 5.32833 10.6078 5.31363ZM18.4774 8.03601L13.4998 7.141C13.3363 7.11163 13.1688 7.11537 13.0067 7.15199C12.8447 7.18862 12.6913 7.25742 12.5553 7.35447C12.4194 7.45151 12.3035 7.5749 12.2144 7.71758C12.1252 7.86027 12.0645 8.01945 12.0358 8.18604L10.3898 17.697C10.3753 17.7804 10.377 17.8659 10.3949 17.9486C10.4129 18.0313 10.4466 18.1095 10.4943 18.1789C10.5419 18.2483 10.6026 18.3074 10.6727 18.3529C10.7428 18.3984 10.821 18.4293 10.9029 18.4439L13.7026 18.9461C14.152 19.0269 14.6127 19.0167 15.0582 18.9161C15.5038 18.8155 15.9255 18.6264 16.2994 18.3597C16.6733 18.093 16.9919 17.7538 17.2371 17.3616C17.4824 16.9694 17.6494 16.5317 17.7287 16.0737L18.9905 8.78164C19.0048 8.69835 19.0029 8.61299 18.9849 8.53045C18.9669 8.4479 18.9331 8.36977 18.8855 8.30053C18.8378 8.23129 18.7773 8.17229 18.7073 8.12691C18.6372 8.08152 18.5591 8.05063 18.4774 8.03601Z" fill="white"/>
+              </g>
+            </svg>
+          </div>
+          <div class="flex-initial pl-3">
+            <p class="font-sans text-sm cursor-pointer text-white font-black">Dashboard UI Kit 2.0</p>
+          </div>
+        </div>
+        <div class="burger" @click="NavBarOpener = !NavBarOpener">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M3 18H21V16H3V18ZM3 13H21V11H3V13ZM3 6V8H21V6H3Z" fill="white"/>
+          </svg>
+        </div>
+      </div>
+      <div :class="NavBarOpener?'w-full':'w-0'" class="smlaptop:w-72 bg-DarkBlue h-screen flex-none">
         <div class="container px-5">
           <div class="flex content-center mt-5">
             <div class="flex-initial">
@@ -14,11 +33,16 @@
             <div class="flex-initial pl-3">
               <p class="font-sans text-sm cursor-pointer text-white font-black">Dashboard UI Kit 2.0</p>
             </div>
+            <div v-if="NavBarOpener" class="burger" @click="NavBarOpener = !NavBarOpener">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M3 18H21V16H3V18ZM3 13H21V11H3V13ZM3 6V8H21V6H3Z" fill="white"/>
+              </svg>
+            </div>
           </div>
           <div class="mt-3">
             <p class="font-sans font-bold text-xs text-gray-400 pl-2">MAIN</p>
           </div>
-          <div :class="{'bg-activeBlue': activeTab === 'Home'}" class="flex rounded content-center my-auto cursor-pointer py-1 mt-1 hover:bg-hoverBlue" @click="activeTab = 'Home'">
+          <div :class="{'bg-activeBlue': activeTab === 'Home'}" class="flex rounded content-center my-auto cursor-pointer py-1 mt-1 hover:bg-hoverBlue" @click="activeTab = 'Home'; NavBarOpener = false">
             <div class="pl-1">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path opacity="0.9" fill-rule="evenodd" clip-rule="evenodd" d="M3 13H11V3H3V13ZM3 21H11V15H3V21ZM13 21H21V11H13V21ZM13 3V9H21V3H13Z" fill="white"/>
@@ -71,7 +95,7 @@
               <p class="font-sans text-sm font-normal text-white">Customers</p>
             </div>
           </div>
-          <div :class="{'bg-activeBlue': activeTab === 'Convo'}" class="flex mt-1 content-center my-auto py-1 rounded cursor-pointer hover:bg-hoverBlue" @click="OpenConversation()">
+          <div :class="{'bg-activeBlue': activeTab === 'Convo'}" class="flex mt-1 content-center my-auto py-1 rounded cursor-pointer hover:bg-hoverBlue" @click="OpenConversation(); NavBarOpener = false">
             <div class="pl-1">
              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path opacity="0.9" fill-rule="evenodd" clip-rule="evenodd" d="M21.99 4C21.99 2.9 21.1 2 20 2H4C2.9 2 2 2.9 2 4V16C2 17.1 2.9 18 4 18H18L22 22L21.99 4ZM18 14H6V12H18V14ZM18 11H6V9H18V11ZM18 8H6V6H18V8Z" fill="white"/>
@@ -129,7 +153,7 @@
           </div>
         </div>
       </div>
-      <div v-if="activeTab === 'Convo'" class="w-0 smlaptop:w-72 bg-white h-screen flex flex-col">
+      <div v-if="activeTab === 'Convo' && !NavBarOpener" class="w-0 smlaptop:w-72 bg-white h-screen flex flex-col">
         <div v-for="(user, idy) in ChatJson" :key="idy" :class="{'bg-gray-200': previewChat.userName === user.userName}" class="ml-2 h-9 mr-2 mt-2 cursor-pointer flex flex-row items-center p-1 w-52 hover:bg-gray-200" @click="OpenChat(idy)">
           <img :src="user.profilePic" class="w-6" alt="">
           <p class="font-sans text-sm pl-1" :class="{'font-bold': user.newMessages}">{{ user.userName }}</p>
@@ -145,26 +169,7 @@
           </div>
         </div>
       </div>
-      <div v-if="activeTab === 'Convo'" class="w-full overflow-x-hidden bg-gray-200 h-screen">
-        <div class="w-full fixed smlaptop:hidden  z-10 bg-DarkBlue p-4 flex justify-between items-center">
-          <div class="flex content-center">
-            <div class="flex-initial">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g id="Icon">
-                <path id="Icon_2" fill-rule="evenodd" clip-rule="evenodd" d="M24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12ZM10.6078 5.31363L9.05221 5.03418H9.05158C8.47404 4.9305 7.87974 5.06484 7.39938 5.40765C6.91902 5.75046 6.59195 6.27366 6.49009 6.8622L5.00968 15.4228C4.98047 15.5909 5.01797 15.7639 5.11395 15.9039C5.20992 16.0438 5.35651 16.1392 5.52148 16.169L8.01094 16.6159C8.34097 16.6752 8.68062 16.5985 8.95517 16.4027C9.22971 16.2068 9.41667 15.9078 9.47491 15.5715L11.1202 6.0599C11.1347 5.97661 11.1329 5.89124 11.115 5.80865C11.097 5.72606 11.0633 5.64788 11.0157 5.57858C10.9682 5.50928 10.9076 5.45021 10.8376 5.40475C10.7676 5.35929 10.6895 5.32833 10.6078 5.31363ZM18.4774 8.03601L13.4998 7.141C13.3363 7.11163 13.1688 7.11537 13.0067 7.15199C12.8447 7.18862 12.6913 7.25742 12.5553 7.35447C12.4194 7.45151 12.3035 7.5749 12.2144 7.71758C12.1252 7.86027 12.0645 8.01945 12.0358 8.18604L10.3898 17.697C10.3753 17.7804 10.377 17.8659 10.3949 17.9486C10.4129 18.0313 10.4466 18.1095 10.4943 18.1789C10.5419 18.2483 10.6026 18.3074 10.6727 18.3529C10.7428 18.3984 10.821 18.4293 10.9029 18.4439L13.7026 18.9461C14.152 19.0269 14.6127 19.0167 15.0582 18.9161C15.5038 18.8155 15.9255 18.6264 16.2994 18.3597C16.6733 18.093 16.9919 17.7538 17.2371 17.3616C17.4824 16.9694 17.6494 16.5317 17.7287 16.0737L18.9905 8.78164C19.0048 8.69835 19.0029 8.61299 18.9849 8.53045C18.9669 8.4479 18.9331 8.36977 18.8855 8.30053C18.8378 8.23129 18.7773 8.17229 18.7073 8.12691C18.6372 8.08152 18.5591 8.05063 18.4774 8.03601Z" fill="white"/>
-                </g>
-              </svg>
-            </div>
-            <div class="flex-initial pl-3">
-              <p class="font-sans text-sm cursor-pointer text-white font-black">Dashboard UI Kit 2.0</p>
-            </div>
-          </div>
-          <div class="burger">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M3 18H21V16H3V18ZM3 13H21V11H3V13ZM3 6V8H21V6H3Z" fill="white"/>
-            </svg>
-          </div>
-        </div>
+      <div v-if="activeTab === 'Convo' && !NavBarOpener" class="w-full overflow-x-hidden bg-gray-200 h-screen">
         <div class="">
           <div class="w-auto mt-16 smlaptop:mt-2 px-2 flex items-center justify-between h-14">
             <div class="flex h-8 rounded justify-start bg-white items-center">
@@ -201,7 +206,7 @@
               </svg>
             </div>
           </div>
-          <div class="rounded-xl CustomMinimumH mt-6 block relative m-2 chatBoxHeight bg-white">
+          <div class="rounded-xl CustomMinimumH mt-6 smlaptop:mt-2 block relative m-2 chatBoxHeight bg-white">
             <div class="w-full rounded-t-xl h-14 flex justify-start items-center my-2 bg-gray-300">
               <p class="font-sans text-base font-bold pl-3">{{ previewChat.userName }}</p>
             </div>
@@ -252,7 +257,7 @@
           </div>
         </div>
       </div>
-      <div v-if="activeTab === 'Home'" class="w-full bg-gray-200 h-screen">
+      <div v-if="activeTab === 'Home' && !NavBarOpener" class="w-full bg-gray-200 h-screen">
         <Home />
       </div>
     </div>
@@ -269,6 +274,7 @@ export default {
     return {
       writtenMessage: '',
       previewChat: {},
+      NavBarOpener: false,
       ChatJson: [
         {
           userName: 'Camilla Tunney',
