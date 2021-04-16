@@ -40,7 +40,7 @@
         <div class="h-1 border border-t-0 border-l-0 border-r-0 border-gray-200 mt-9"></div>
       </div>
       <div v-for="(graph, i) in graphs" :key="i" class="flex has-tooltip w-14 smlaptop:w-1/12 flex-col pl-2 z-0">
-        <div class='tooltip text-center rounded mb-2 text-white bg-hoverBlue'>{{ graph.status }}</div>
+        <div class='tooltip text-center text-xs rounded mb-2 text-white bg-hoverBlue py-2'>{{ graph.status }}</div>
         <div :class="graphHeight(i)" class="bg-blueish rounded h-10 cursor-pointer" />
         <p class="text-center font-sans text-gray-400">{{ graph.month }}</p>
       </div>
@@ -62,8 +62,8 @@
         </div>
       </div>
       <div v-for="(task, i) in toDoList" :key="i" class="flex flex-row h-14 items-center px-3 border-gray-200 border border-t-0 border-l-0 border-r-0">
-        <div class="flex justify-center w-1/12">
-          <input type="checkbox" v-model="task.checked" class="checked:bg-gray-200 checked:border-red">
+        <div class="flex justify-start w-1/12">
+          <input type="checkbox" v-model="task.checked" class="checked:bg-gray-200 cursor-pointer checked:border-red">
         </div>
         <div @click="toDoList[i].checked = !toDoList[i].checked" class="w-7/12 flex justify-start cursor-pointer">
           <strike class="font-sans text-gray-400 text-base text-hardBlue" v-if="task.checked">{{ task.taskName }}</strike>
@@ -221,7 +221,7 @@ export default {
       ]
     }
   },
-  methods () {
+  mounted () {
     const device = navigator.userAgent.toLowerCase()
     const isAndroid = device.includes('android')
     if (isAndroid || !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)) {
@@ -229,7 +229,6 @@ export default {
     } else {
       console.log('big screen device')
     }
-    this.previewChat = {...this.ChatJson[0]}
   },
   methods: {
     randomizeTheGraph () { // onchanging the dropdown random number will be generated graph will change
