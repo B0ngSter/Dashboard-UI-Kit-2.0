@@ -198,7 +198,7 @@
           <div v-if="activeTab === 'Convo'" class="w-auto rounded-sm h-auto bg-white m-2 smlaptop:hidden m-h-14">
             <div class="ml-2 flex items-center justify-between h-14" @click="openFrndList()">
               <div class="w-4/5">
-                <img :src="previewChat.profilePic" class="w-6 border-2 border-gray-200 h-6 ml-2 float-left mr-2" alt="">
+                <img :src="previewChat.profilePic" class="w-6 rounded border-2 border-gray-200 h-6 ml-2 float-left mr-2" alt="">
                 <p class="font-sans text-base font-bold text-hardBlue">{{ previewChat.userName }}</p>
               </div>
               <div class="w-1/5 flex justify-end">
@@ -208,7 +208,7 @@
             <div v-if="openFriendList">
               <div v-for="(user, idy) in ChatJson" :key="idy" class="mr-2 mt-2 cursor-pointer w-52" @click="OpenChat(idy)">
                 <div v-if="user.userName !== previewChat.userName" :class="{'mb-2': idy === ChatJson.length - 1}" class="ml-3 h-9 cursor-pointer flex flex-row items-center p-1 w-full hover:bg-gray-200">
-                  <img :src="user.profilePic" class="w-6 border-2 border-gray-200 h-6" alt="">
+                  <img :src="user.profilePic" class="w-6 border-2 rounded border-gray-200 h-6" alt="">
                   <p class="font-sans text-sm pl-1 text-hardBlue" :class="{'font-bold': user.newMessages}">{{ user.userName }}</p>
                 </div>
               </div>
@@ -218,11 +218,11 @@
             <div class="w-full rounded-t-xl h-14 flex justify-start items-center my-2 bg-gray-300">
               <p class="font-sans text-base font-bold pl-3 text-hardBlue">{{ previewChat.userName }}</p>
             </div>
-            <div class="w-full px-3 py-5 overflow-x-hidden flex flex-col">
+            <div class="w-full pb-14 px-3 overflow-x-hidden flex flex-col">
               <div v-for="(chat, idx) in previewChat.chatHistory" :key="idx" class="flex flex-col w-full">
                 <div v-if="chat.sender === 'Me'" class="mt-5">
                   <div class="flex items-center">
-                    <img src="@/static/Profile6.png" class="w-6 float-left border-2 border-gray-200 h-6" alt="">
+                    <img src="@/static/Profile6.png" class="w-6 float-left rounded border-2 border-gray-200 h-6" alt="">
                     <p class="font-sans pl-2 text-base font-bold text-hardBlue">Felix Levan<span class="text-gray-400 pl-2 font-normal text-base ">{{ chat.time }}</span></p>
                   </div>
                   <p class="font-sans pl-8 font-normal text-hardBlue text-base">{{ chat.message }}</p>
@@ -230,7 +230,7 @@
                 </div>
                 <div v-if="chat.sender === 'notMe'" class="mt-5">
                   <div class="flex items-center">
-                    <img :src="previewChat.profilePic" class="w-6 float-left border-2 border-gray-200 h-6" alt="">
+                    <img :src="previewChat.profilePic" class="w-6 float-left rounded border-2 border-gray-200 h-6" alt="">
                     <p class=" font-sans pl-2 text-base font-bold">{{ previewChat.userName }}<span class="text-gray-400 pl-2 font-normal text-base ">{{ chat.time }}</span></p>
                   </div>
                   <p class="font-sans pl-8 font-normal text-hardBlue text-base">{{ chat.message }}</p>
@@ -240,7 +240,7 @@
               <h2 v-if="previewChat.newMessages" class="text-center text-gray-400 font-sans text-base relative z-10 mt-8"><span class="line-center">New Messages</span></h2>
               <div v-if="previewChat.newMessages" class="mt-5">
                 <div class="flex items-center">
-                  <img :src="previewChat.profilePic" class="w-6 float-left border-2 border-gray-200 h-6" alt="">
+                  <img :src="previewChat.profilePic" class="w-6 float-left rounded border-2 border-gray-200 h-6" alt="">
                   <p class=" font-sans pl-2 text-base font-bold">{{ previewChat.userName }}<span class="text-gray-400 pl-2 text-base ">{{ previewChat.newMessages.time }}</span></p>
                 </div>
                 <p class="font-sans pl-8 text-hardBlue text-base">{{ previewChat.newMessages.message }}</p>
