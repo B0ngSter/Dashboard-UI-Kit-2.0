@@ -20,7 +20,7 @@
             </div>
         </div>
     </div>
-    <div class="w-full mt-16 smlaptop:mt-2 px-2 block h-14">
+    <div class="w-full mt-16 smlaptop:mt-2 px-4 block h-14">
         <Head class="mt-2" />
         <div style="width: 99%;" class="rounded-md CustomMinimumH mt-6 smlaptop:mt-2 block relative my-2 chatBoxHeight bg-white">
             <div class="w-full rounded-t-xl h-14 flex flex-row items-center my-2 bg-gray-300 overflow-x-scroll smlaptop:overflow-x-hidden">

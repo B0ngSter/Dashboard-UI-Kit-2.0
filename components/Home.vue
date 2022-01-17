@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="mx-2">
   <div class="w-auto pt-101 smlaptop:pt-3  px-2 flex items-center justify-between h-14">
     <div class="flex h-8 rounded justify-start bg-white items-center">
       <div class="pl-2">

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="flex w-screen">
-      <div class="w-full fixed smlaptop:hidden z-10 bg-DarkBlue p-4 flex justify-between items-center">
+      <div class="w-full fixed smlaptop:hidden z-10 bg-DarkBlue p-4 flex justify-between items-center overflow-hidden">
         <div class="flex content-center items-center">
           <div class="flex-initial">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -171,7 +171,7 @@
       </div>
       <div v-if="activeTab === 'Convo' && !NavBarOpener" class="w-full overflow-x-hidden bg-gray-200 h-screen">
         <div class="">
-          <div class="w-auto mt-16 smlaptop:mt-2 px-2 flex items-center justify-between h-14">
+          <div class="w-auto mt-16 smlaptop:mt-2 px-4 flex items-center justify-between h-14">
             <div class="flex h-8 rounded justify-start bg-white items-center">
               <div class="pl-2">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -214,7 +214,7 @@
               </div>
             </div>
           </div>
-          <div class="rounded-md CustomMinimumH mt-6 smlaptop:mt-2 block relative m-2 chatBoxHeight bg-white">
+          <div class="rounded-md CustomMinimumH mt-6 smlaptop:mt-2 block relative m-4 chatBoxHeight bg-white">
             <div class="w-full rounded-t-xl h-14 flex justify-start items-center my-2 bg-gray-300">
               <p class="font-sans text-base font-bold pl-3 text-hardBlue">{{ previewChat.userName }}</p>
             </div>
@@ -498,6 +498,9 @@ export default {
 </script>
 
 <style>
+body {
+  overflow: hidden;
+}
 .chatBoxHeight {
   min-height: 98vh;
 }
