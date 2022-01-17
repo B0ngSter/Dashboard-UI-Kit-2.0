@@ -24,7 +24,7 @@
       </div>
     </div>
   </div>
-  <div class="rounded-xl m-2 mt-8 smlaptop:mt-1 h-64 bg-white">
+  <div class="rounded-md m-2 mt-8 smlaptop:mt-1 h-64 bg-white">
     <div class="w-full rounded-t-xl h-14 flex justify-between items-center my-2 bg-gray-300">
       <p class="pl-3 font-sans text-base font-bold text-hardBlue">This Month</p>
       <select @click="randomizeTheGraph()" name="cars" class="mr-3 text-hardBlue focus:outline-none cursor-pointer bg-white w-28 border border-gray-200" id="cars">
@@ -47,7 +47,7 @@
     </div>
   </div>
   <div class="flex smlaptop:justify-between flex-wrap smlaptop:flex-nowrap">
-    <div class="rounded-xl m-2 w-full smlaptop:w-3/5 bg-white">
+    <div class="rounded-md m-2 w-full smlaptop:w-3/5 bg-white">
       <div class="w-full rounded-t-xl h-14 flex justify-between items-center bg-gray-300">
         <p class="pl-3 text-base font-bold font-sans text-hardBlue">Tasks</p>
         <div class="w-3/5 tablet:w-1/5 flex flex-row justify-end">
@@ -85,7 +85,7 @@
         </div>
       </div>
     </div>
-    <div class="rounded-xl m-2 w-full smlaptop:w-2/5 bg-white">
+    <div class="rounded-md m-2 w-full smlaptop:w-2/5 bg-white">
       <div class="w-full rounded-t-xl h-14 flex justify-between items-center bg-gray-300">
         <p class="pl-3 font-sans text-base font-bold text-hardBlue">Projects</p>
         <div class="mr-4 bg-gray-200 p-2">

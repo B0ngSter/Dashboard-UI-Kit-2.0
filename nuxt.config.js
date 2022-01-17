@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'StevenStone',
+    title: 'UI kit 2.0 Dashboard',
     htmlAttrs: {
       lang: 'en'
     },
@@ -11,7 +11,8 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {href: 'https://fonts.googleapis.com/icon?family=Material+Icons',  rel: 'stylesheet'}
     ]
   },
 

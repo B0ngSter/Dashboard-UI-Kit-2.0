@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="flex w-screen">
-      <div class="w-full fixed smlaptop:hidden  z-10 bg-DarkBlue p-4 flex justify-between items-center">
+      <div class="w-full fixed smlaptop:hidden z-10 bg-DarkBlue p-4 flex justify-between items-center">
         <div class="flex content-center items-center">
           <div class="flex-initial">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -20,7 +20,7 @@
           </svg>
         </div>
       </div>
-      <div :class="NavBarOpener?'w-full':'w-0'" class="smlaptop:w-72 bg-DarkBlue h-screen flex-none">
+      <div :class="NavBarOpener?'w-full':'w-0'" class="smlaptop:w-60 bg-DarkBlue h-screen flex-none">
         <div class="container px-5">
           <div class="flex content-center mt-5">
             <div class="flex-initial">
@@ -52,7 +52,7 @@
               <p class="font-sans text-sm font-normal text-white">HOME</p>
             </div>
           </div>
-          <div class="flex content-center my-auto py-1 mt-1 rounded cursor-pointer hover:bg-hoverBlue">
+          <div :class="{'bg-activeBlue': activeTab === 'Activity'}" class="flex content-center my-auto py-1 mt-1 rounded cursor-pointer hover:bg-hoverBlue" @click="activeTab = 'Activity'; NavBarOpener = false">
             <div class="pl-1">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path opacity="0.9" fill-rule="evenodd" clip-rule="evenodd" d="M3 17H21V15H3V17ZM3 20H21V19H3V20ZM3 13H21V10H3V13ZM3 4V8H21V4H3Z" fill="white"/>
@@ -62,7 +62,7 @@
               <p class="font-sans text-sm font-normal text-white">Activity</p>
             </div>
           </div>
-          <div class="flex content-center my-auto py-1 mt-1 rounded cursor-pointer hover:bg-hoverBlue">
+          <div :class="{'bg-activeBlue': activeTab === 'Projects'}" class="flex content-center my-auto py-1 mt-1 rounded cursor-pointer hover:bg-hoverBlue" @click="activeTab = 'Projects'; NavBarOpener = false">
             <div class="pl-1">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path opacity="0.9" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H12L10 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V8C22 6.9 21.1 6 20 6ZM20 18H4V8H20V18Z" fill="white"/>
@@ -72,7 +72,7 @@
               <p class="font-sans text-sm font-normal text-white">Projects</p>
             </div>
           </div>
-          <div class="flex content-center my-auto py-1 mt-1 rounded cursor-pointer hover:bg-hoverBlue">
+          <div :class="{'bg-activeBlue': activeTab === 'Tasks'}" class="flex content-center my-auto py-1 mt-1 rounded cursor-pointer hover:bg-hoverBlue" @click="activeTab = 'Tasks'; NavBarOpener = false">
             <div class="pl-1">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path opacity="0.9" fill-rule="evenodd" clip-rule="evenodd" d="M18 7.00009L16.59 5.59009L10.25 11.9301L11.66 13.3401L18 7.00009ZM22.24 5.59009L11.66 16.1701L7.48003 12.0001L6.07003 13.4101L11.66 19.0001L23.66 7.00009L22.24 5.59009ZM0.410034 13.4101L6.00003 19.0001L7.41003 17.5901L1.83003 12.0001L0.410034 13.4101Z" fill="white"/>
@@ -85,7 +85,7 @@
           <div class="mt-3">
             <p class="font-sans text-xs font-bold text-gray-300 pl-2">PEOPLE</p>
           </div>
-          <div class="flex content-center my-auto py-1 mt-1 rounded cursor-pointer hover:bg-hoverBlue">
+          <div :class="{'bg-activeBlue': activeTab === 'Customers'}" class="flex content-center my-auto py-1 mt-1 rounded cursor-pointer hover:bg-hoverBlue" @click="activeTab = 'Customers'; NavBarOpener = false">
             <div class="pl-1">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path opacity="0.9" fill-rule="evenodd" clip-rule="evenodd" d="M16.5 12C17.88 12 18.99 10.88 18.99 9.5C18.99 8.12 17.88 7 16.5 7C15.12 7 14 8.12 14 9.5C14 10.88 15.12 12 16.5 12ZM9 11C10.66 11 11.99 9.66 11.99 8C11.99 6.34 10.66 5 9 5C7.34 5 6 6.34 6 8C6 9.66 7.34 11 9 11ZM16.5 14C14.67 14 11 14.92 11 16.75V19H22V16.75C22 14.92 18.33 14 16.5 14ZM9 13C6.67 13 2 14.17 2 16.5V19H9V16.75C9 15.9 9.33 14.41 11.37 13.28C10.5 13.1 9.66 13 9 13Z" fill="white"/>
@@ -108,7 +108,7 @@
           <div class="mt-3">
             <p class="font-sans text-xs cursor-pointer font-bold text-gray-300 pl-2">ACCOUNT</p>
           </div>
-          <div class="flex content-center my-auto py-1 mt-1 rounded cursor-pointer hover:bg-hoverBlue">
+          <div :class="{'bg-activeBlue': activeTab === 'Users'}" class="flex content-center my-auto py-1 mt-1 rounded cursor-pointer hover:bg-hoverBlue" @click="activeTab = 'Users'; NavBarOpener = false">
             <div class="pl-1">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path opacity="0.9" fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 5C13.66 5 15 6.34 15 8C15 9.66 13.66 11 12 11C10.34 11 9 9.66 9 8C9 6.34 10.34 5 12 5ZM12 19.2C9.5 19.2 7.29 17.92 6 15.98C6.03 13.99 10 12.9 12 12.9C13.99 12.9 17.97 13.99 18 15.98C16.71 17.92 14.5 19.2 12 19.2Z" fill="white"/>
@@ -118,7 +118,7 @@
               <p class="font-sans text-sm font-normal text-white">Users</p>
             </div>
           </div>
-          <div class="flex content-center my-auto py-1 mt-1 rounded cursor-pointer hover:bg-hoverBlue">
+          <div :class="{'bg-activeBlue': activeTab === 'Settings'}" class="flex content-center my-auto py-1 mt-1 rounded cursor-pointer hover:bg-hoverBlue" @click="activeTab = 'Settings'; NavBarOpener = false">
             <div class="pl-1">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path opacity="0.9" fill-rule="evenodd" clip-rule="evenodd" d="M19.43 12.98C19.47 12.66 19.5 12.34 19.5 12C19.5 11.66 19.47 11.34 19.43 11.02L21.54 9.37C21.73 9.22 21.78 8.95 21.66 8.73L19.66 5.27C19.54 5.05 19.27 4.97 19.05 5.05L16.56 6.05C16.04 5.65 15.48 5.32 14.87 5.07L14.49 2.42C14.46 2.18 14.25 2 14 2H9.99996C9.74996 2 9.53996 2.18 9.50996 2.42L9.12996 5.07C8.51996 5.32 7.95996 5.66 7.43996 6.05L4.94996 5.05C4.71996 4.96 4.45996 5.05 4.33996 5.27L2.33996 8.73C2.20996 8.95 2.26996 9.22 2.45996 9.37L4.56996 11.02C4.52996 11.34 4.49996 11.67 4.49996 12C4.49996 12.33 4.52996 12.66 4.56996 12.98L2.45996 14.63C2.26996 14.78 2.21996 15.05 2.33996 15.27L4.33996 18.73C4.45996 18.95 4.72996 19.03 4.94996 18.95L7.43996 17.95C7.95996 18.35 8.51996 18.68 9.12996 18.93L9.50996 21.58C9.53996 21.82 9.74996 22 9.99996 22H14C14.25 22 14.46 21.82 14.49 21.58L14.87 18.93C15.48 18.68 16.04 18.34 16.56 17.95L19.05 18.95C19.28 19.04 19.54 18.95 19.66 18.73L21.66 15.27C21.78 15.05 21.73 14.78 21.54 14.63L19.43 12.98ZM12 15.5C10.07 15.5 8.49996 13.93 8.49996 12C8.49996 10.07 10.07 8.5 12 8.5C13.93 8.5 15.5 10.07 15.5 12C15.5 13.93 13.93 15.5 12 15.5Z" fill="white"/>
@@ -153,7 +153,7 @@
           </div>
         </div>
       </div>
-      <div v-if="activeTab === 'Convo' && !NavBarOpener" class="w-0 smlaptop:w-72 bg-white h-screen flex flex-col">
+      <div v-if="activeTab === 'Convo' && !NavBarOpener" class="w-0 smlaptop:w-64 bg-white h-screen flex flex-col">
         <div v-for="(user, idy) in ChatJson" :key="idy" :class="{'bg-gray-200': previewChat.userName === user.userName}" class="ml-2 h-9 mr-2 mt-2 cursor-pointer flex flex-row items-center p-1 w-52 hover:bg-gray-200" @click="OpenChat(idy)">
           <img :src="user.profilePic" class="w-6 border-2 border-gray-200 h-6" alt="">
           <p class="font-sans text-sm pl-1 text-hardBlue" :class="{'font-bold': user.newMessages}">{{ user.userName }}</p>
@@ -214,7 +214,7 @@
               </div>
             </div>
           </div>
-          <div class="rounded-xl CustomMinimumH mt-6 smlaptop:mt-2 block relative m-2 chatBoxHeight bg-white">
+          <div class="rounded-md CustomMinimumH mt-6 smlaptop:mt-2 block relative m-2 chatBoxHeight bg-white">
             <div class="w-full rounded-t-xl h-14 flex justify-start items-center my-2 bg-gray-300">
               <p class="font-sans text-base font-bold pl-3 text-hardBlue">{{ previewChat.userName }}</p>
             </div>
@@ -268,15 +268,45 @@
       <div v-if="activeTab === 'Home' && !NavBarOpener" class="w-full bg-gray-200 h-auto">
         <Home />
       </div>
+      <div v-if="activeTab === 'Projects' && !NavBarOpener" class="w-full bg-gray-200 h-auto">
+        <Projects />
+      </div>
+      <div v-if="activeTab === 'Tasks' && !NavBarOpener" class="w-full bg-gray-200 h-auto">
+        <Tasks />
+      </div>
+      <div v-if="activeTab === 'Activity' && !NavBarOpener" class="w-full bg-gray-200 h-auto">
+        <Activity />
+      </div>
+      <div v-if="activeTab === 'Customers' && !NavBarOpener" class="w-full bg-gray-200 h-auto">
+        <Customers />
+      </div>
+      <div v-if="activeTab === 'Users' && !NavBarOpener" class="w-full bg-gray-200 h-auto">
+        <Users />
+      </div>
+      <div v-if="activeTab === 'Settings' && !NavBarOpener" class="w-full bg-gray-200 h-auto">
+        <Settings />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import Home from '~/components/Home'
+import Projects from '~/components/Projects'
+import Tasks from '~/components/Tasks'
+import Customers from '~/components/Customers'
+import Activity from '~/components/Activity'
+import Users from '~/components/Users'
+import Settings from '~/components/Settings'
 export default {
   components: {
-    Home
+    Home,
+    Projects,
+    Settings,
+    Users,
+    Tasks,
+    Customers,
+    Activity
   },
   data () {
     return {

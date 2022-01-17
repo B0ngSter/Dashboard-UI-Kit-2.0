@@ -11,7 +11,7 @@ module.exports = {
     theme: {
         screens: {
             'tablet': '640px',
-            'smlaptop': '1024px',
+            'smlaptop': '924px',
             'bglaptop': '1280px'
         },
         extend: {
