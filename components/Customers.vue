@@ -45,24 +45,24 @@
             </div>
             <div class="w-full pb-4 px-3 overflow-x-hidden flex flex-col border-b-2 border-gray-100">
                 <div class="flex flex-col smlaptop:flex-row w-full">
-                    <div class="w-full smlaptop:w-1/3 block">
-                        <p>Amount Due</p>
-                        <p>$4000.00</p>
+                    <div class="w-full smlaptop:w-1/3 block p-2">
+                        <p class="text-base text-gray-400">Amount Due</p>
+                        <p class="text-2xl font-bold">$4000.00</p>
                     </div>
-                    <div class="w-full smlaptop:w-1/3 block">
-                        <p>Expenses</p>
-                        <p>$450.00</p>
+                    <div class="w-full smlaptop:w-1/3 block p-2">
+                        <p class="text-base text-gray-400">Expenses</p>
+                        <p class="text-2xl font-bold">$450.00</p>
                     </div>
-                    <div class="w-full smlaptop:w-1/3 block">
-                        <p>Latest invoice</p>
-                        <p>INV-20160827-3</p>
+                    <div class="w-full smlaptop:w-1/3 block p-2">
+                        <p class="text-base text-gray-400">Latest invoice</p>
+                        <p class="text-2xl font-bold">INV-20160827-3</p>
                     </div>
                 </div>
             </div>
             <div class="w-full border-b-2 border-gray-100 flex justify-between py-4">
                 <div class="flex flex-row">
                     <div class="lowOp">
-                        <span class="material-icons px-3 pt-1">file_download_done</span>
+                        <span class="material-icons px-3 pt-1">app_registration</span>
                     </div>
                     <div>
                         <p class="text-base pt-1">Giddify</p>
@@ -73,7 +73,7 @@
             <div class="w-full border-b-2 border-gray-100 flex justify-between py-4">
                 <div class="flex flex-row">
                     <div class="lowOp">
-                        <span class="material-icons px-3 pt-1">file_download_done</span>
+                        <span class="material-icons px-3 pt-1">person</span>
                     </div>
                     <div>
                         <p class="text-base pt-1">Mr. Rocco Erhart</p>
@@ -84,7 +84,7 @@
             <div class="w-full border-b-2 border-gray-100 flex flex-col py-4">
                 <div class="flex flex-row">
                     <div class="lowOp">
-                        <span class="material-icons px-3 pt-1">account_circle</span>
+                        <span class="material-icons px-3 pt-1">message</span>
                     </div>
                     <div>
                         <p class="text-base pt-1">Information</p>
@@ -113,7 +113,7 @@
             <div class="w-full flex justify-start flex-col py-4">
                 <div class="flex flex-row">
                     <div class="lowOp">
-                        <span class="material-icons px-3 pt-1">file_copy</span>
+                        <span class="material-icons px-3 pt-1">credit_card</span>
                     </div>
                     <div>
                         <p class="text-base pt-1">Payments</p>

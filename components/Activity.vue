@@ -1,11 +1,11 @@
 <template>
-  <div class="w-full mt-16 smlaptop:mt-2 block h-screen overflow-hidden">
+  <div class="w-full mt-16 smlaptop:mt-2 block h-screen">
       <Head class="mt-3 px-4" />
       <div class="rounded-md mx-4 mt-6 smlaptop:mt-2 block relative my-2 bg-white">
           <div class="w-full rounded-t-xl h-14 flex flex-row items-center bg-gray-300 overflow-x-scroll smlaptop:overflow-x-hidden">
               <p class="font-sans text-base font-medium pl-3 text-hardBlue">Activity</p>
           </div>
-          <div class="border-b-2 border-l-2 h-auto border-gray-200 ml-14" v-for="(activity, idx) in activities" :key="idx">
+          <div class="border-b-2 border-l-2 h-auto border-gray-200  smlaptop:ml-14 ml-8" v-for="(activity, idx) in activities" :key="idx">
               <div class="h-7"></div>
               <div class="flex flex-row">
                   <div class="dot">
@@ -18,7 +18,7 @@
                       </div>
                       <p :class="{'mb-6': !activity.report.length}" class="text-sm tracking-wider mt-1"><span class="text-gray-400">{{ activity.description }}</span> <span class="text-sm tracking-wider text-base">{{ activity.task }}</span></p>
                       <div v-for="(task, idy) in activity.report" :key="idy">
-                          <div v-if="task.type === 'checkbox'" class="flex justify-between my-4 py-3 border-2 border-gray-200">
+                          <div v-if="task.type === 'checkbox'" class="flex justify-between my-4 py-3 border-2 border-gray-200 mx-2">
                               <div @click="task.checked = !task.checked" class="w-8/12 flex justify-start items-center cursor-pointer">
                                   <input type="checkbox" v-model="task.checked" class="focus:outline-none cursor-pointer rounded-md bg-gray-300 h-4 w-4 ml-3" placeholder="Add task...">
                                   <strike class="font-sans pl-4 text-gray-400 cursor-pointer tracking-wider text-sm text-hardBlue" v-if="task.checked">{{ task.message }}</strike>
@@ -37,7 +37,7 @@
                                   </div>
                               </div>
                           </div>
-                          <div v-if="task.type === 'Zip'" class="flex justify-start my-4 py-3 border-2 border-gray-200">
+                          <div v-if="task.type === 'Zip'" class="flex justify-start my-4 py-3 border-2 border-gray-200 mx-2">
                               <div class="flex justify-start items-center cursor-pointer">
                                   <div class="lowOp">
                                       <span class="material-icons px-3 pt-1">insert_drive_file</span>
