@@ -1,6 +1,6 @@
 <template>
 <div class="flex flex-row h-auto overflow-x-hidden">
-    <div class="w-0 relative smlaptop:w-72 bg-white h-auto min-h-screen overflow-hidden block">
+    <div class="w-0 relative smlaptop:w-56 bg-white h-auto min-h-screen overflow-hidden block fixed sideBar">
         <div class="ml-2 h-9 mr-2 mt-2 cursor-pointer flex flex-col items-center p-1 w-52">
             <div class="bg-gray-200 ml-2 h-9 mr-2 cursor-pointer flex flex-row  rounded-md items-center p-2 w-52 hover:bg-gray-300">
                 <p class="font-sans text-sm pl-1 text-sm">Inbox</p>
@@ -41,7 +41,7 @@
             </div>
         </div>
     </div>
-    <div class="w-full mt-16 smlaptop:mt-2 px-4 block h-14">
+    <div class="w-full mt-16 smlaptop:mt-2 px-3 smlaptop:px-0 pr-1 calcFn min-h-screen block h-14">
         <Head class="mt-3" />
         <div style="width: 99%;" class="rounded-md CustomMinimumH mt-6 smlaptop:mt-2 block relative my-2 chatBoxHeight bg-white">
             <div class="w-full rounded-t-xl h-14 flex flex-row items-center my-2 bg-gray-300 overflow-x-scroll smlaptop:overflow-x-hidden">
@@ -78,6 +78,7 @@
                 </div>
             </div>
         </div>
+        <div class="h-12 w-full" />
     </div>
 </div>
 </template>
@@ -171,6 +172,16 @@ export default {
 </script>
 
 <style>
+
+@media screen and (min-width: 580px) {
+  sideBar {
+    left: 15rem;
+  }
+    .calcFn {
+        width: calc(100% - 15rem);
+        margin-left: auto;
+    }
+}
 .lowOp {
     opacity: 0.5;
 }

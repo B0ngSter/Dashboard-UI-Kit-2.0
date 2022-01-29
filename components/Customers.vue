@@ -1,6 +1,6 @@
 <template>
 <div class="flex flex-row  overflow-x-hidden">
-    <div class="w-0 smlaptop:w-72 bg-white h-screen flex flex-col fixed sideBar">
+    <div class="w-0 smlaptop:w-56 bg-white h-screen flex flex-col fixed sideBar">
         <div class="ml-2 h-9 mr-2 mt-2 cursor-pointer flex flex-col items-center p-1 w-0 smlaptop:w-52">
             <div class="bg-gray-200 ml-2 h-9 mr-2 cursor-pointer flex flex-row  rounded-md items-center p-2 w-52 hover:bg-gray-300">
                 <p class="font-sans text-sm tracking-wider pl-1 text-hardBlue">Landing Page</p>
@@ -9,18 +9,18 @@
                 <p class="font-sans text-sm tracking-wider pl-1 text-hardBlue">Strand App</p>
             </div>
         </div>
-        <div class="hidden smlaptop:w-60 fixed bottom-1.5 flex justify-between px-3">
-            <div class="font-sans bg-gray-200 py-2 px-2 w-32 text-xs h-8">
+        <div class="smlaptop:w-60 fixed bottom-1.5 flex justify-between px-3">
+            <div class="font-sans w-4/5 bg-gray-200 py-2 px-2 w-32 text-xs h-8">
                 New Project
             </div>
-            <div class="pr-3">
+            <div class=" w-1/5 px-3">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M3 17V19H9V17H3ZM3 5V7H13V5H3ZM13 21V19H21V17H13V15H11V21H13ZM7 9V11H3V13H7V15H9V9H7ZM21 13V11H11V13H21ZM15 9H17V7H21V5H17V3H15V9Z" fill="#110F24" fill-opacity="0.4"/>
                 </svg>
             </div>
         </div>
     </div>
-    <div class="w-full mt-16 smlaptop:mt-2 px-3 smlaptop:px-0 smlaptop:pl-4 pr-1 block h-14 calcFn min-h-screen">
+    <div class="w-full mt-16 smlaptop:mt-2 px-3 smlaptop:px-0 pr-1 calcFn min-h-screen block h-14">
         <Head class="mt-2" />
         <div style="width: 99%;" class="rounded-md CustomMinimumH mt-6 smlaptop:mt-2 block relative my-2 chatBoxHeight bg-white">
             <div class="w-full rounded-t-xl h-14 flex flex-row items-center my-2 bg-gray-300 overflow-x-scroll smlaptop:overflow-x-hidden">
@@ -149,6 +149,7 @@
                 </div>
             </div>
         </div>
+        <div class="h-12 w-full" />
     </div>
 </div>
 </template>
@@ -210,11 +211,11 @@ export default {
 <style>
 
 @media screen and (min-width: 580px) {
-  sideBar {
+  .sideBar {
     left: 15rem;
   }
     .calcFn {
-        width: calc(100% - 18rem);
+        width: calc(100% - 15rem);
         margin-left: auto;
     }
 }

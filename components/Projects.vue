@@ -1,6 +1,6 @@
 <template>
 <div class="flex flex-row overflow-x-hidden">
-    <div class="w-0 smlaptop:w-72 bg-white h-screen flex flex-col">
+    <div class="w-0 smlaptop:w-64 bg-white h-screen flex flex-col">
         <div class="ml-2 h-9 mr-2 mt-2 cursor-pointer flex flex-col items-center p-1 w-0 smlaptop:w-52">
             <div class="bg-gray-200 ml-2 h-9 mr-2 cursor-pointer flex flex-row  rounded-md items-center p-2 w-52 hover:bg-gray-300">
                 <p class="font-sans text-sm tracking-wider pl-1 text-hardBlue">Landing Page</p>
